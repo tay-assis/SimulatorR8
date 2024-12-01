@@ -46,5 +46,4 @@ A MPU deverá suportar os seguintes comandos:
 ---
 
 ## Observações importantes:  
-O processador R8 foi desenvolvido na **PUC-RS**, e todas os recursos estão do projeto estão disponíveis no site oficial:  
-[R8 Processor Core](https://www.inf.pucrs.br/~calazans/research/Projects/R8/R8_Processor_Core.html)
+O processador R8 foi desenvolvido na **PUC-RS**, e todas os recursos estão do projeto estão disponíveis no site oficial: [R8 Processor Core](https://www.inf.pucrs.br/~calazans/research/Projects/R8/R8_Processor_Core.html)
