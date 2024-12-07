@@ -35,15 +35,28 @@ A MPU deverá suportar os seguintes comandos:
 
 ---
 
-### Passo 2: *(Descreva aqui o segundo passo do projeto)*  
-*(Inclua os detalhes do próximo passo conforme necessário.)*  
+### Passo 2: **Implementação de Interrupção no R8**
+- Instrução `INTR Rs1`:
+  - Ativa o sinal `intr_in` no processador.
+  - O registrador `Rs1` contém o endereço do tratamento da exceção.
+  - A interrupção só é tratada se o conteúdo de `Rs1` for diferente de zero.
+  - Quando tratada:
+    - O endereço `PC+1` é armazenado na pilha.
+    - O processador salta para o endereço contido em `Rs1`.
+    - Após o tratamento o registrador é zerado.
 
 ---
 
-### Passo 3: *(Descreva aqui o terceiro passo do projeto)*  
-*(Inclua os detalhes do próximo passo conforme necessário.)*  
+### Passo 3: **Integração do Processador R8 com a MPU**
+- A CPU se comunica com a MPU utilizando os sinais: `address`, `data`, `ce_n`, `we_n` e `oe_n`.  
+- As operações são realizadas com base nos endereços enviados pela CPU para a MPU.  
+- Foi desenvolvido um código em assembly para realizar o cálculo: `Z[4:4] = ((k1 * X[4:4]) * Y[4:4]) + (k2 * Z[4:4])`
+- Os valores das matrizes `Z`, `X`, `Y` e das variáveis `k1` e `k2` são números inteiros randomizados, gerados em um site, e armazenados na memória RAM do projeto.
+- O código completo em assembly está disponível no arquivo `Code_R8` no repositório.
+
+*Observação: A interrupção não foi utilizada nesse cálculo.*
 
 ---
 
 ## Observações importantes:  
-O processador R8 foi desenvolvido na **PUC-RS**, e todas os recursos estão do projeto estão disponíveis no site oficial: [R8 Processor Core](https://www.inf.pucrs.br/~calazans/research/Projects/R8/R8_Processor_Core.html)
+O processador R8 foi desenvolvido na **PUC-RS**, e todas os recursos do projeto estão disponíveis no site oficial: [R8 Processor Core](https://www.inf.pucrs.br/~calazans/research/Projects/R8/R8_Processor_Core.html)
